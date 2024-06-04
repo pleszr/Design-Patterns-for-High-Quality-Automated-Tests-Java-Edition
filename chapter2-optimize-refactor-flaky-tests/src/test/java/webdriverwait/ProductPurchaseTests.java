@@ -22,6 +22,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -200,17 +202,17 @@ public class ProductPurchaseTests {
     }
 
     private void waitToBeClickable(By by) {
-        var webDriverWait = new WebDriverWait(driver, 30);
+        var webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
     private WebElement waitAndFindElement(By by) {
-        var webDriverWait = new WebDriverWait(driver, 30);
+        var webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         return webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     private List<WebElement> waitAndFindElements(By by) {
-        var webDriverWait = new WebDriverWait(driver, 30);
+        var webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         return webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 }

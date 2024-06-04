@@ -25,6 +25,8 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,8 +93,7 @@ public class WebCoreDriver extends Driver {
 //            }
 //        };
 
-        webDriverWait = new WebDriverWait(webDriver, 30);
-    }
+        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(30));    }
 
     @Override
     public void quit() {
